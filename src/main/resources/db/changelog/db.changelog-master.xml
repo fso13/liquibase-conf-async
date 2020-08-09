@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="0" author="drudenko">
+        <createSequence sequenceName="seq_entity"/>
+    </changeSet>
+
+    <changeSet id="1" author="drudenko">
+        <createTable tableName="tb_test">
+            <column name="id" type="bigint" valueSequenceNext="seq_entity">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="text" type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
