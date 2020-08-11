@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.TimerTask;
 
 @Component
-final class DelayedRunner implements ApplicationListener {
+final class DelayedRunnerMigration implements ApplicationListener {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
     private final SpringLiquibase springLiquibase;
@@ -23,7 +23,7 @@ final class DelayedRunner implements ApplicationListener {
     private int delay;
 
     @Autowired
-    public DelayedRunner(SpringLiquibase liquibase, AsyncSpringLiquibase asyncSpringLiquibase) {
+    public DelayedRunnerMigration(SpringLiquibase liquibase, AsyncSpringLiquibase asyncSpringLiquibase) {
         this.springLiquibase = liquibase;
         this.asyncSpringLiquibase = asyncSpringLiquibase;
     }
